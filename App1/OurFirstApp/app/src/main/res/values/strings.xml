@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OurFirstApp</string>
+    <string name="hello">Fra alle os til alle jer</string>
+    <string name="btnCancelStr">Der blev trykket på Cancel</string>
+</resources>
