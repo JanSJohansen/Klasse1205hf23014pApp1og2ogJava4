@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,6 +32,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         intent = getIntent(); // Hent det intent, som brugt til at starte denne
         String text = intent.getStringExtra("textFromCaller");
         txtFromCaller.setText(text);
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
 
     @Override

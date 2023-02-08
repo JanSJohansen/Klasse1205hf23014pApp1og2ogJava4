@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,10 +28,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         txtFromSecond = findViewById(R.id.txtFromSecond);
+        txtFromSecond.setBackgroundColor(0xFFFF00FF);
         btnGoToSecond = findViewById(R.id.btnGoToSecond);
         txtToSecond = findViewById(R.id.txtToSecond);
 
         btnGoToSecond.setOnClickListener(this);
+        btnGoToSecond.setBackgroundColor(0xFF8800AA);
 
         secondActivityLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Intent intent = result.getData();
                         String text = intent.getStringExtra("textFromSecond");
                         txtFromSecond.setText(text);
+                        Toast.makeText(MainActivity.this, text, Toast.LENGTH_LONG).show();
                     }
                 }
         );
