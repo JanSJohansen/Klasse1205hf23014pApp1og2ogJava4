@@ -53,14 +53,24 @@ public class GraphicsEinstein extends View implements Runnable
             xPos += xMove;
             yPos += yMove;
 
-            if(xPos + drwWidth > viewWidth || xPos <= 0)
+            if(xPos + drwWidth > viewWidth)
             {
-                xMove *= -1;
+                xMove = Math.abs(xMove) * -1;
             }
-            if(yPos + drwHeight > viewHeight || yPos <= 0)
+            if(xPos < 0)
             {
-                yMove *= -1;
+                xMove = Math.abs(xMove);
             }
+
+            if(yPos + drwHeight > viewHeight)
+            {
+                yMove = Math.abs(yMove) * -1;
+            }
+            if(yPos < 0)
+            {
+                yMove = Math.abs(yMove);
+            }
+
             postInvalidate(); // Kaldes fra anden tråd.
             try {
                 Thread.sleep(2);
