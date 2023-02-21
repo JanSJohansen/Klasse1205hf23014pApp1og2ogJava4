@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/theLayout"
     android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
@@ -48,7 +49,7 @@
             android:layout_weight="1"
             android:id="@+id/txtXZ"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="XY: "/>
+            android:text="XZ: "/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,6 +69,9 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="ZY: "/>
     </LinearLayout>
-
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnShowGraphics"
+        android:text="Show Graphics"/>
 </LinearLayout>
