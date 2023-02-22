@@ -20,7 +20,7 @@ public class BallRoller extends View implements SensorEventListener
     float xPos = 300;
     float yPos = 300;
     float xMove, yMove;
-    float xFake, yFake;
+
 
 
     int screenWidth;
@@ -47,17 +47,7 @@ public class BallRoller extends View implements SensorEventListener
         //super.onDraw(canvas);
         ball.setBounds((int)xPos, (int)yPos, ((int)xPos) + ballWidth, ((int)yPos) + ballHeight);
         ball.draw(canvas);
-
-        Paint paint = new Paint();
-        paint.setColor(Color.BLUE);
-        paint.setStrokeWidth(2);
-        canvas.drawLine(7,5, screenWidth - 7, 5, paint);
-        canvas.drawLine(screenWidth - 7,5, screenWidth - 7, screenHeight -5, paint);
-        canvas.drawLine(screenWidth - 7,screenHeight - 5, 7, screenHeight - 5, paint);
-        canvas.drawLine(7,screenHeight - 5, 7, 5, paint);
-
     }
-
 
     @Override
     public void onSensorChanged(SensorEvent event)
@@ -74,21 +64,20 @@ public class BallRoller extends View implements SensorEventListener
 
             if(xPos < 0 - 50) {
                 xMove = Math.abs(xMove) * 0.9f;
-                xPos += xMove + 1;
+                xPos += xMove;
             }
             if(xPos > screenWidth - ballWidth + 5) {
                 xMove = Math.abs(xMove) * -0.9f;
-                xPos += xMove - 1;
+                xPos += xMove;
             }
             if(yPos < 0 - 10) {
                 yMove = Math.abs(yMove) * 0.9f;
-                yPos += yMove + 1;
+                yPos += yMove;
             }
             if(yPos > screenHeight - ballHeight + 15) {
                 yMove = Math.abs(yMove) * -0.9f;
-                yPos += yMove - 1;
+                yPos += yMove;
             }
-
             invalidate();
         }
     }
