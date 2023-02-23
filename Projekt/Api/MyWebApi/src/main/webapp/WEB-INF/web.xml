@@ -11,7 +11,7 @@
    <servlet>
       <servlet-name>ApiServlet</servlet-name>
          <servlet-class>
-          dk.tec.jaj.example1.ApiServlet
+          dk.tec.jaj.example3.ApiServlet
          </servlet-class>
          <load-on-startup>1</load-on-startup>
    </servlet>
