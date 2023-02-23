@@ -1,5 +1,6 @@
 package dk.tec.jaj.example3;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -50,7 +51,33 @@ public class ApiServlet extends HttpServlet {
 			out.print("No Match");
 		}		
 	}
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException 
+	{	
+		super.doPost(request, response);
+		
+		response.setStatus(200);
+		
+		BufferedReader reader = request.getReader();
+		String jsonStr = reader.readLine();
+		System.out.println(jsonStr);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		Elev elev = mapper.readValue(jsonStr, Elev.class);
+		
+		System.out.print("Name: " + elev.getName());
+		
+		DBTool dbtool = new DBTool();
+		//dbtool.addElev(elev);
+	}
 }
+
+
+
+
+
+
 
 
 
