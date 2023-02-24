@@ -37,7 +37,7 @@ public class ApiServlet extends HttpServlet {
 		switch(analyze.getLevel())
 		{
 		case MatchElevId:
-			out.print("Match på Elev og id: " + analyze.getId() + "<br/>");
+			//out.print("Match på Elev og id: " + analyze.getId() + "<br/>");
 			
 			Elev elev = dbTool.getElevById(analyze.getId());
 			
