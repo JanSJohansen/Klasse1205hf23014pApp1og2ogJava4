@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Elev> call, Throwable t)
             {
-                Log.d("Jans Error: ", t.getMessage());
+                Log.d("Der kom en elev - ikke ", t.getMessage());
             }
         });
     }
