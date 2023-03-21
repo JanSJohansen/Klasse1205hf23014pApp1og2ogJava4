@@ -45,7 +45,7 @@ public class ApiServlet extends HttpServlet {
 			out.print(mapper.writeValueAsString(elever.get(analyze.getId())));
 			break;
 		case MatchElev:
-			out.print("Match på Elev");
+			//out.print("Match på Elev");
 			String json = mapper.writeValueAsString(elever);
 			out.print(json);
 			break;

@@ -20,9 +20,6 @@ public class BallRoller extends View implements SensorEventListener
     float xPos = 300;
     float yPos = 300;
     float xMove, yMove;
-
-
-
     int screenWidth;
     int screenHeight;
     public BallRoller(MainActivity mainAct) {
@@ -56,11 +53,12 @@ public class BallRoller extends View implements SensorEventListener
         {
             mainAct.updateValues(event.values);
 
-            xMove += -event.values[0];
+            xMove += -event.values[0]/25;
             xPos += xMove;
 
-            yMove += event.values[1];
+            yMove += event.values[1]/25;
             yPos += yMove;
+            invalidate();
 
             if(xPos < 0 - 50) {
                 xMove = Math.abs(xMove) * 0.9f;
@@ -78,7 +76,7 @@ public class BallRoller extends View implements SensorEventListener
                 yMove = Math.abs(yMove) * -0.9f;
                 yPos += yMove;
             }
-            invalidate();
+
         }
     }
 
